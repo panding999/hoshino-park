@@ -1,0 +1,12 @@
+{
+  "name": "hoshino-park",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "星野游乐园：可交互的夜景三维微缩游乐园",
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node scripts/verify-bumper-physics.mjs && node scripts/verify-ride-motion.mjs"
+  }
+}
