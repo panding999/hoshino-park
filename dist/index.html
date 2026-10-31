@@ -9,13 +9,11 @@
 </head>
 <body>
 <main id="world" aria-label="可拖拽旋转、滚轮缩放的三维微缩游乐园"></main>
-<header class="chrome"><div class="eyebrow"><span class="star">✳</span> HOSHINO PARK <span class="edition">NIGHT PARK · CHAPTER 02</span></div><h1>星野<span>游乐园</span><i>。</i></h1><p>夜幕降临，童话继续。</p><div class="sub">把星光，收藏在一座小小的乐园。</div></header>
 <div class="weather chrome"><span class="status-dot"></span> 夜间游乐园 <span class="line"></span> 20:00 <small>小小世界，大大梦想。</small></div>
 <div class="loader" id="loader"><span>✳</span><p>正在点亮游乐园</p></div>
 <div id="error" hidden>游乐园暂时未能加载。请使用支持 WebGL 的浏览器，并刷新重试。</div>
-<aside class="chrome scene-note"><span>01 — A LITTLE NIGHT MAGIC</span><p>把星光，收藏在一座小小的乐园。</p></aside>
 <button class="chrome fireworks-button" id="fireworks" aria-pressed="false" title="播放或结束一场约 30 秒的烟花演出"><span class="firework-icon" aria-hidden="true">✧</span><span><span class="firework-label">放烟花</span><small>NIGHT SPECTACULAR</small></span></button>
-<footer class="chrome"><nav aria-label="场景视角"><button class="active" data-view="all">全景<span>Overview</span></button><button data-view="wheel">摩天轮<span>Ferris wheel</span></button><button data-view="carousel">旋转木马<span>Carousel</span></button><button data-view="ship">海盗船<span>Pirate ship</span></button><button data-view="coaster">苍龙过山车<span>Sky Dragon</span></button><button data-view="bumper">碰碰车<span>Bumper cars</span></button><button data-view="gate">星光大门<span>Grand entrance</span></button><button data-view="entrances">排队入口<span>Entry lanes</span></button><div class="divider"></div><button id="pause" title="暂停设施动画" aria-label="暂停设施动画">Ⅱ</button><button id="auto" title="自动环绕" aria-label="自动环绕" aria-pressed="false">↻</button><button id="hide" title="隐藏界面，按 H 恢复" aria-label="隐藏界面">⌑</button></nav><p class="help">拖拽旋转 <b>·</b> 滚轮缩放 <b>·</b> 双指平移 <span>H 隐藏界面</span></p></footer>
+<footer class="chrome"><nav aria-label="场景视角"><button class="active" data-view="all">全景<span>Overview</span></button><button data-view="wheel">摩天轮<span>Ferris wheel</span></button><button data-view="carousel">旋转木马<span>Carousel</span></button><button data-view="ship">海盗船<span>Pirate ship</span></button><button data-view="coaster">苍龙过山车<span>Sky Dragon</span></button><button data-view="bumper">碰碰车<span>Bumper cars</span></button><button data-view="gate">星光大门<span>Grand entrance</span></button><button data-view="entrances">排队入口<span>Entry lanes</span></button><div class="view-tools"><button id="pause" title="暂停设施动画" aria-label="暂停设施动画">Ⅱ</button><button id="auto" title="自动环绕" aria-label="自动环绕" aria-pressed="false">↻</button><button id="hide" title="隐藏界面，按 H 恢复" aria-label="隐藏界面">⌑</button></div></nav><p class="help">拖拽旋转 · 滚轮缩放<br>H 隐藏 / 显示界面</p></footer>
 <button id="restore" aria-label="显示界面" title="显示界面">⌑</button>
 <script type="module" src="main.js"></script>
 </body></html>

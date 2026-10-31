@@ -17,12 +17,12 @@ const sideWorld=createBumperWorld(sideImpact,{drag:false});advance(sideWorld,1.4
 assert(sideImpact.some(b=>Math.abs(b.omega)>.05),'Off-centre contact must generate angular response');
 assert(energy(sideImpact)<=1.125+.001,'Collision must not create kinetic energy');
 
-const wallBody=body({x:19,z:9.5,angle:Math.PI/2,vx:1}),wall=createBumperWorld([wallBody],{drag:false});
+const wallBody=body({x:bounds.maxX-1.75,z:9.5,angle:Math.PI/2,vx:1}),wall=createBumperWorld([wallBody],{drag:false});
 advance(wall,1);assert(wallBody.vx<0,'Wall must give a damped rebound');
 assert(Math.abs(wallBody.angle-Math.PI/2)<.05,'A wall impact must not snap heading to reversed velocity');
 const frozen=JSON.stringify(wallBody);wall.update(0);assert.equal(JSON.stringify(wallBody),frozen);
 
-const initial=Array.from({length:8},(_,i)=>({x:14.2+(i%4-1.5)*2.8,z:10.5+(i<4?-3.2:3.2),angle:i*2.4,id:i}));
+const initial=Array.from({length:8},(_,i)=>({x:18+(i%4-1.5)*3.9,z:11+(i<4?-5:5),angle:i*2.4,id:i}));
 const cars=initial.map(createBumperBody),crowd=createBumperWorld(cars);let maximumOverlap=0,totalSpeed=0,maxStall=0,maxLean=0;const stalled=Array(8).fill(0);
 for(let frame=0;frame<7200;frame++){
   crowd.update(1/60);

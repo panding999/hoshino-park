@@ -1,7 +1,7 @@
 // Top-down rigid bodies. Two overlapping circles approximate each rubber bumper.
 // Rendering and player/NPC input share the same simulation; no velocity-facing snap.
 export const BUMPER_SHAPE=Object.freeze({radius:.73,halfSpan:.23});
-export const BUMPER_BOUNDS=Object.freeze({minX:7.65,maxX:20.75,minZ:4.88,maxZ:16.12});
+export const BUMPER_BOUNDS=Object.freeze({minX:8.65,maxX:27.35,minZ:3.1,maxZ:18.9});
 const clamp=(x,a,b)=>Math.max(a,Math.min(b,x));
 const wrap=a=>Math.atan2(Math.sin(a),Math.cos(a));
 const torque=(x,z,fx,fz)=>z*fx-x*fz;
@@ -91,7 +91,7 @@ export function createBumperWorld(bodies,{bounds=BUMPER_BOUNDS,drag=true}={}){
       const sx=Math.sin(b.angle),sz=Math.cos(b.angle),forward=b.vx*sx+b.vz*sz,side=b.vx*sz-b.vz*sx;
       const throttle=clamp(input.throttle??0,-1,1),steer=clamp(input.steer??0,-1,1);
       if(drag){
-        const drive=throttle*2.5-forward*(input.brake?5:1.35);
+        const drive=throttle*3.25-forward*(input.brake?5:1.35);
         b.vx+=(sx*drive-sz*side*2.4)*h;b.vz+=(sz*drive+sx*side*2.4)*h;
         const wantedYaw=steer*1.35*Math.min(1,Math.abs(forward)/.35)*Math.sign(forward);
         b.omega+=(wantedYaw-b.omega)*2.4*h;
